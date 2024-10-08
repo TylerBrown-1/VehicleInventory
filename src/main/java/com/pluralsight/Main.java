@@ -25,19 +25,19 @@ public class Main {
 
             switch (command) {
                 case 1:
-                    listAllVehicles();
+                    listVehicles();
                     break;
                 case 2:
-                    findVehiclesByMakeModel(scanner);
+                    findMakeModel(scanner);
                     break;
                 case 3:
-                    findVehiclesByPrice(scanner);
+                    findPrice(scanner);
                     break;
                 case 4:
-                    findVehiclesByColor(scanner);
+                    findByColor(scanner);
                     break;
                 case 5:
-                    addAVehicle(scanner);
+                    addVehicle(scanner);
                     break;
                 case 6:
                     System.out.println("Exiting...");
@@ -60,7 +60,7 @@ public class Main {
     }
 
     // Lists all vehicles in the inventory
-    private static void listAllVehicles() {
+    private static void listVehicles() {
         if (vehicleCount == 0) {
             System.out.println("No vehicles in inventory.");
             return;
@@ -71,7 +71,7 @@ public class Main {
     }
 
     // Searches for vehicles by make/model
-    private static void findVehiclesByMakeModel(Scanner scanner) {
+    private static void findMakeModel(Scanner scanner) {
         System.out.print("Enter make/model to search: ");
         String searchModel = scanner.nextLine();
         boolean found = false;
@@ -88,7 +88,7 @@ public class Main {
     }
 
     // Searches for vehicles by price range
-    private static void findVehiclesByPrice(Scanner scanner) {
+    private static void findPrice(Scanner scanner) {
         System.out.print("Enter minimum price: ");
         float minPrice = scanner.nextFloat();
         System.out.print("Enter maximum price: ");
@@ -107,7 +107,7 @@ public class Main {
     }
 
     // Searches for vehicles by color
-    private static void findVehiclesByColor(Scanner scanner) {
+    private static void findByColor(Scanner scanner) {
         System.out.print("Enter color to search: ");
         String searchColor = scanner.nextLine();
         boolean found = false;
@@ -124,7 +124,7 @@ public class Main {
     }
 
     // Adds a new vehicle to the inventory
-    private static void addAVehicle(Scanner scanner) {
+    private static void addVehicle(Scanner scanner) {
         if (vehicleCount >= inventory.length) {
             System.out.println("Inventory is full. Cannot add more vehicles.");
             return;
